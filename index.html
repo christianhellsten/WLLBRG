@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WLLBRG | Real-Time Stock Watchlist Terminal</title>
+    <meta name="description" content="A retro-styled real-time stock watchlist terminal. Monitor multiple watchlists, track price movements, and view macro indicators with a Bloomberg-inspired CRT aesthetic.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="scanline-overlay"></div>
+
+    <nav class="nav">
+        <div class="nav-title">WLLBRG</div>
+        <div class="nav-links">
+            <a href="#features">FEATURES</a>
+            <a href="#screenshots">DEMO</a>
+            <a href="#download">DOWNLOAD</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">[ REAL-TIME TERMINAL ]</div>
+                <h1 class="hero-title">WLLBRG</h1>
+                <p class="hero-subtitle">Track your portfolio like a pro.<br>Bloomberg-style terminal aesthetics. Zero subscription fees.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-value gain">REAL-TIME</span>
+                        <span class="stat-label">SSE STREAMING</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value info">UNLIMITED</span>
+                        <span class="stat-label">WATCHLISTS</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value amber">6</span>
+                        <span class="stat-label">MACRO INDICATORS</span>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#download" class="btn btn-primary">[ DOWNLOAD ]</a>
+                    <a href="#screenshots" class="btn btn-secondary">[ VIEW DEMO ]</a>
+                </div>
+            </div>
+            <div class="hero-terminal">
+                <div class="terminal-header">
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot amber"></span>
+                    <span class="terminal-dot green"></span>
+                </div>
+                <div class="terminal-content">
+                    <div class="terminal-line"><span class="prompt">$</span> wllbrg start</div>
+                    <div class="terminal-line dim">Loading watchlists...</div>
+                    <div class="terminal-line dim">Connecting to SSE stream...</div>
+                    <div class="terminal-line gain">Connected. 22 symbols active.</div>
+                    <div class="terminal-line"><span class="prompt">$</span> <span class="cursor">_</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2 class="section-title">[ FEATURES ]</h2>
+            <div class="feature-grid">
+                <div class="feature-card crash">
+                    <div class="feature-icon">[ ! ]</div>
+                    <h3>CRASH DETECTION</h3>
+                    <p>Instantly spot stocks dropping more than 5%. Color-coded panels separate crashes from losses from gains.</p>
+                </div>
+                <div class="feature-card loss">
+                    <div class="feature-icon">[ - ]</div>
+                    <h3>LOSS TRACKING</h3>
+                    <p>Monitor positions in the red. Real-time price updates with sub-second latency via SSE streaming.</p>
+                </div>
+                <div class="feature-card flat">
+                    <div class="feature-icon">[ = ]</div>
+                    <h3>FLAT DETECTION</h3>
+                    <p>Track consolidating stocks within 0.5% of open. Identify potential breakout candidates.</p>
+                </div>
+                <div class="feature-card gain">
+                    <div class="feature-icon">[ + ]</div>
+                    <h3>GAIN MONITORING</h3>
+                    <p>Watch your winners climb. Stocks up to +5% glow green in real-time as they move.</p>
+                </div>
+                <div class="feature-card surge">
+                    <div class="feature-icon">[ ^ ]</div>
+                    <h3>SURGE ALERTS</h3>
+                    <p>Catch explosive moves over +5%. Cyan highlighting makes surging stocks impossible to miss.</p>
+                </div>
+                <div class="feature-card macro">
+                    <div class="feature-icon">[ M ]</div>
+                    <h3>MACRO VIEW</h3>
+                    <p>Net Liquidity, Buffett Indicator, Credit Spreads, Yield Curve, VIX, S&P vs 200-MA. All in one view.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="screenshots" class="screenshots">
+            <h2 class="section-title">[ DEMO ]</h2>
+            <div class="screenshot-container">
+                <figure class="screenshot">
+                    <img src="screenshots/wllbrg-main.jpg" alt="WLLBRG main view showing watchlist with stocks sorted by performance">
+                    <figcaption>Main view with 5-column performance sorting</figcaption>
+                </figure>
+                <figure class="screenshot">
+                    <img src="screenshots/wllbrg-add-symbol.jpg" alt="WLLBRG add ticker modal">
+                    <figcaption>Quick ticker addition with keyboard shortcuts</figcaption>
+                </figure>
+                <figure class="screenshot">
+                    <img src="screenshots/wllbrg-macro.jpg" alt="WLLBRG macro indicators view">
+                    <figcaption>Macro indicators dashboard</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="keyboard">
+            <h2 class="section-title">[ KEYBOARD FIRST ]</h2>
+            <div class="keyboard-grid">
+                <div class="key-combo">
+                    <kbd>1</kbd>-<kbd>9</kbd>
+                    <span>Switch watchlists</span>
+                </div>
+                <div class="key-combo">
+                    <kbd>M</kbd>
+                    <span>Macro view</span>
+                </div>
+                <div class="key-combo">
+                    <kbd>N</kbd>
+                    <span>Add ticker</span>
+                </div>
+                <div class="key-combo">
+                    <kbd>D</kbd>
+                    <span>Delete mode</span>
+                </div>
+                <div class="key-combo">
+                    <kbd>T</kbd>
+                    <span>Toggle TTS alerts</span>
+                </div>
+                <div class="key-combo">
+                    <kbd>ESC</kbd>
+                    <span>Cancel / Exit</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="download" class="download">
+            <h2 class="section-title">[ DOWNLOAD ]</h2>
+
+            <div id="download-buttons" class="download-buttons"></div>
+
+            <div class="download-content">
+                <div class="download-info">
+                    <h3 class="download-subtitle">[ BUILD FROM SOURCE ]</h3>
+                    <p>Or compile it yourself. Single binary, no dependencies.</p>
+                    <ul class="requirements">
+                        <li><span class="label">RUNTIME:</span> Go 1.21+</li>
+                        <li><span class="label">DATA:</span> Yahoo Finance API</li>
+                        <li><span class="label">CONFIG:</span> YAML watchlists</li>
+                        <li><span class="label">LICENSE:</span> MIT</li>
+                    </ul>
+                </div>
+                <div class="download-terminal">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot amber"></span>
+                        <span class="terminal-dot green"></span>
+                    </div>
+                    <div class="terminal-content">
+                        <div class="terminal-line"><span class="comment"># Clone the repository</span></div>
+                        <div class="terminal-line"><span class="prompt">$</span> git clone https://github.com/wllbrg/wllbrg</div>
+                        <div class="terminal-line"><span class="prompt">$</span> cd wllbrg</div>
+                        <div class="terminal-line"></div>
+                        <div class="terminal-line"><span class="comment"># Build and run</span></div>
+                        <div class="terminal-line"><span class="prompt">$</span> go build -o wllbrg</div>
+                        <div class="terminal-line"><span class="prompt">$</span> ./wllbrg</div>
+                        <div class="terminal-line gain">Server running on http://localhost:3000</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">WLLBRG</div>
+            <div class="footer-status">
+                <span class="status-indicator"></span>
+                <span>SYSTEM ONLINE</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="download.js"></script>
+</body>
+</html>
